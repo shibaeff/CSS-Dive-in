@@ -6,47 +6,119 @@
   <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
 </head>
 
-<!--Some additional styling reset-->
+<!--This is how flexbox is done-->
 <style>
-/* FLOAT-BASED LAYOUT */
+/* FLEXBOX-BASED LAYOUT */
+/* BASIC TYPOGRAPHY                       */
+/* from https://github.com/oxalorg/sakura */
+html {
+  font-size: 62.5%;
+  font-family: serif;
+}
 body {
-  padding-left: 200px;
-  padding-right: 190px;
-  min-width: 240px;
+  font-size: 1.8rem;
+  line-height: 1.618;
+  max-width: 38em;
+  margin: auto;
+  color: #4a4a4a;
+  background-color: #f9f9f9;
+  padding: 13px;
+}
+@media (max-width: 684px) {
+  body {
+    font-size: 1.53rem;
+  }
+}
+@media (max-width: 382px) {
+  body {
+    font-size: 1.35rem;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: 700;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+h1 {
+  font-size: 2.35em;
+}
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.75em;
+}
+h4 {
+  font-size: 1.5em;
+}
+h5 {
+  font-size: 1.25em;
+}
+h6 {
+  font-size: 1em;
+}
+
+/* RESET LAYOUT AND ADD COLORS */
+body {
+  margin: 0;
+  padding: 0;
+  max-width: inherit;
+  background: #fff;
+  color: #4a4a4a;
 }
 header, footer {
-  margin-left: -200px;
-  margin-right: -190px;   
-}
-main, nav, aside {
-  position: relative;
-  float: left;
-}
-main {
-  padding: 0 20px;
-  width: 100%;
+  font-size: large;
+  text-align: center;
+  padding: 0.3em 0;
+  background-color: #4a4a4a;
+  color: #f9f9f9;
 }
 nav {
-  width: 180px;
-  padding: 0 10px;
-  right: 240px;
-  margin-left: -100%;
+  background: #eee;
+}
+main {
+  background: #f9f9f9;
 }
 aside {
-  width: 130px;
+  background: #eee;
+}
+
+/* FLEXBOX-BASED LAYOUT */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  flex: 1;
+}
+main {
+  flex: 1;
+  padding: 0 20px;
+}
+nav {
+  flex: 0 0 180px;
   padding: 0 10px;
-  margin-right: -100%;
+  order: -1;
 }
-footer {
-  clear: both;
-}
-* html nav {
-  left: 150px;
+aside {
+  flex: 0 0 130px;
+  padding: 0 10px;
 }
 </style>
 
 <body>
   <header>This is the header.</header>
+  <div class="container">
   <main>
     <h1>This is the main content.</h1>
     <p>Lorem ipsum dolor sit amet, non scelerisque lacus in maecenas, est in dapibus nullam a fringilla. Sit vel nunc dictum donec integer, ipsum posuere mattis enim justo. Faucibus magna, eum massa donec leo quam egestas in, eros enim erat imperdiet ac suscipit suspendisse, eget mauris pede donec. Neque justo ultricies sit, parturient dolor enim, mollis mollis ipsum elit. Aliquam sem cras vestibulum amet, a pede nam veniam praesent quam eros, morbi mauris mauris accumsan, mi eget tristique. Egestas rutrum neque nunc cursus pretium leo, eleifend amet scelerisque, leo ipsum nam molestie metus nullam sociosqu, class posuere a duis fringilla. Justo mi non, fermentum proin nec wisi, neque elit vel ultricies. Viverra et amet. Vestibulum velit lacinia magna bibendum velit. Ultrices amet suspendisse vel. Feugiat sociis penatibus maecenas in ut. Amet fugit.</p>
@@ -60,6 +132,7 @@ footer {
     <p>Massa quis lacus condimentum id. Vestibulum quam, in felis condimentum quam velit diam, ultricies nunc, qui tellus quis. Massa vel elementum suscipit. Arcu dui et mauris lorem mauris neque, metus penatibus luctus sapien vitae. Proin lectus ligula aliquet nibh a iaculis, leo morbi wisi elementum aliquam, integer nec lobortis. Magnis lectus vitae justo, sapien leo taciti lacus fringilla lorem, non egestas. Donec turpis lorem ridiculus, ipsum nam tristique elementum dolor senectus lacinia. Duis urna mattis luctus eros, turpis nec, proin molestie posuere bibendum sed tincidunt curabitur, diam curabitur eget ultrices in conubia maxime.
 +</p>
   </aside>
+</div>
   <footer>This is the footer.</footer>
 </body>
 </html>
