@@ -6,30 +6,42 @@
   <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
 </head>
 
-<!-->Some additional styling reset<-->
+<!--Some additional styling reset-->
 <style>
+/* FLOAT-BASED LAYOUT */
 body {
-  margin: 0;
-  padding: 0;
-  max-width: inherit;
-  background: #fff;
-  color: #4a4a4a;
+  padding-left: 200px;
+  padding-right: 190px;
+  min-width: 240px;
 }
 header, footer {
-  font-size: large;
-  text-align: center;
-  padding: 0.3em 0;
-  background-color: #4a4a4a;
-  color: #f9f9f9;
+  margin-left: -200px;
+  margin-right: -190px;   
 }
-nav {
-  background: #eee;
+main, nav, aside {
+  position: relative;
+  float: left;
 }
 main {
-  background: #f9f9f9;
+  padding: 0 20px;
+  width: 100%;
+}
+nav {
+  width: 180px;
+  padding: 0 10px;
+  right: 240px;
+  margin-left: -100%;
 }
 aside {
-  background: #eee;
+  width: 130px;
+  padding: 0 10px;
+  margin-right: -100%;
+}
+footer {
+  clear: both;
+}
+* html nav {
+  left: 150px;
 }
 </style>
 
